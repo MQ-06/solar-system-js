@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="nasa-btn" onclick="fetchNASAImage()">
+      NASA Picture of the Day
+    </button>
+
+    <button class="fact-btn" onclick="fetchRandomFact()">
+      Solar System Facts
+    </button>
+
+    <div class="container">
+      <div class="sun">
+        <img src="./images/sun.png" alt="sun" />
+      </div>
+      <div class="planet mercury" onclick="fetchPlanetFact('Mercury', event)">
+        <div class="fact-box"></div>
+      </div>
+      <div class="planet venus" onclick="fetchPlanetFact('Venus', event)">
+        <div class="fact-box"></div>
+      </div>
+      <div class="planet earth" onclick="fetchPlanetFact('Earth', event)">
+        <div class="fact-box"></div>
+      </div>
+      <div class="planet mars" onclick="fetchPlanetFact('Mars', event)">
+        <div class="fact-box"></div>
+      </div>
+      <div class="planet jupiter" onclick="fetchPlanetFact('Jupiter', event)">
+        <div class="fact-box"></div>
+      </div>
+      <div class="planet saturn" onclick="fetchPlanetFact('Saturn', event)">
+        <div class="fact-box"></div>
+      </div>
+      <div class="planet uranus" onclick="fetchPlanetFact('Uranus', event)">
+        <div class="fact-box"></div>
+      </div>
+      <div class="planet neptune" onclick="fetchPlanetFact('Neptune', event)">
+        <div class="fact-box"></div>
+      </div>
+      <div class="planet pluto" onclick="fetchPlanetFact('Pluto', event)">
+        <div class="fact-box"></div>
+      </div>
+    </div>
+
+    <div id="nasaModal" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">❌</button>
+        <img id="nasaImage" src="" alt="NASA Picture of the Day" />
+        <div class="modal-title" id="nasaTitle"></div>
+        <div class="modal-description" id="nasaDescription"></div>
+      </div>
+    </div>
+
+    <div id="factModal" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeFactModal()">❌</button>
+        <div class="modal-title" id="factTitle"></div>
+        <div class="modal-description" id="factDescription"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function closeModal() {
+        document.getElementById("nasaModal").style.display = "none";
+      }
+
+      function fetchNASAImage() {
+        const apiKey = "qLInhNt7EzNZVFXXqwx4677JJeCjlIgRMU1Y5qHV";
+        const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("nasaImage").src = data.url;
+            document.getElementById("nasaTitle").innerText = data.title;
+            document.getElementById("nasaDescription").innerText =
+              data.explanation;
+            document.getElementById("nasaModal").style.display = "flex";
+          })
+          .catch((error) => console.error("Error fetching NASA image:", error));
+      }
+
+      function fetchRandomFact() {
+        const facts = [
+          "Mercury is the closest planet to the Sun.",
+          "Venus is the hottest planet in the solar system.",
+          "Earth is the only planet known to support life.",
+          "Mars is known as the Red Planet due to its reddish appearance.",
+          "Jupiter has the most moons of any planet in the solar system.",
+          "Saturn is famous for its stunning ring system.",
+          "Uranus rotates on its side, making it unique in the solar system.",
+          "Neptune is the most distant planet in the solar system.",
+          "Pluto was reclassified as a dwarf planet in 2006."
+        ];
+
+        const randomIndex = Math.floor(Math.random() * facts.length);
+        const randomFact = facts[randomIndex];
+
+        document.getElementById("factTitle").innerText = "Solar System Fact";
+        document.getElementById("factDescription").innerText = randomFact;
+        document.getElementById("factModal").style.display = "flex";
+      }
+
+      function closeFactModal() {
+        document.getElementById("factModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
