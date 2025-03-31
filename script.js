@@ -36,7 +36,7 @@ function fetchNASAImage() {
 
 function fetchRandomFact() {
   const facts = [
-    "Mercury is the closest planet to the Sun.",
+    "Mercury is the closest planet to Sun.",
     "Venus is the hottest planet in the solar system.",
     "Earth is the only planet known to support life.",
     "Mars is known as the Red Planet due to its reddish appearance.",
