@@ -31,7 +31,7 @@ function fetchNASAImage() {
         data.explanation;
       document.getElementById("nasaModal").style.display = "flex";
     })
-    .catch((error) => console.error("Error fetching NASA image:", error));
+    .catch((error) => console.error("Error fetching image from NASA:", error));
 }
 
 function fetchRandomFact() {
