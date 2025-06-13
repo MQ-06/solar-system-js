@@ -26,5 +26,4 @@ Clone the repo, open `index.html` in your browser, and blast off! 🚀
 
 ```bash
 git clone https://github.com/your-username/solar-system
-cd solar-system
 open index.html
