@@ -14,6 +14,8 @@ Welcome to the cosmos! This project is a lightweight simulation of our Solar Sys
 - 🎨 Cosmic-themed CSS styling
 - 🖱️ Hover effects & interactivity
 - 🌟 Stars randomly scattered across the screen to create a deep-space effect
+-📷 NASA Picture of the Day integration
+-🔭 Random Planet Fact Generator — learn something new with every visit!
 
 
 ## 📁 Tech Stack
