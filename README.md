@@ -13,12 +13,14 @@ Welcome to the cosmos! This project is a lightweight simulation of our Solar Sys
 - 🪐 Planetary motion using pure JavaScript
 - 🎨 Cosmic-themed CSS styling
 - 🖱️ Hover effects & interactivity
+- 🌟 Stars randomly scattered across the screen to create a deep-space effect
+
 
 ## 📁 Tech Stack
 
-- **HTML** – The celestial layout
+- **HTML** – Builds the structure
 - **CSS** – Stylized with stars and shadows
-- **JavaScript** – The heartbeat behind planetary motion
+- **JavaScript** – The heartbeat behind planetary motion and stars position
 
 ## 🛠️ How to Run
 
